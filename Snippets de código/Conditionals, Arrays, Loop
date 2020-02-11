@@ -1,0 +1,95 @@
+Making Decisions:
+{
+	
+	Analise de diferentes condições => Devemos reagir diferentemente dependendo das condições dadas.
+	
+	Relational Operators: Para fazer a analise de condições, utilizamos os operadores relacionais. Eles são:
+	
+	==  é igual a
+	> maior que
+	> menor que
+	>= maior ou igual a
+	>= menor ou igual a 
+	!= diferente de
+	
+	Boolean expressions: São as condições propriamente ditas. Elas devolvem verdadeiro ou falso.
+	if/else : verifica uma boolean expression, caso verdade, executa uma porção especifica do codigo, caso contrario, executa outra.
+	Ex.:
+	int x = 0;
+	int y = 1;
+	//Verifica se x é menor do que y, se for verdade define o x como 1, se nao for define x como 0;
+	// boolean expression: x<y
+		if(x<y){
+			//Caso x for menor do que y:
+			x = 2
+		}else{
+			//Caso x maior ou igual a y:
+			x = 0;
+		}
+
+	Ternary Expression: Serve para expressões lógicas mais simples. O exemplo abaixo é a versão simplificada do código escrito acima.
+		
+		x = (x<y) ? 2:0;
+}
+
+Arrays:
+{
+	Array: É um conjunto de objetos de mesmo tipo. Os items do array são armazenados com um index dentro da lista, este index é associado
+	ao item começando por 0.
+	
+	Para declarar um array, basta criar um objeto com o conjunto de items que deseja armazenar, sendo que os items devem ser todos do mesmo tipo.
+	Ex.:
+	//Array de números inteiros
+	int[] array = {1,2,3,4};
+	
+	System.out.println(array.lenght);
+	//Neste array o seu tamanho é 4
+	Output: 4
+	
+	System.out.println(array[3]);
+	//Porém como o primeiro índice é 0 precisamos sempre utilizar o (tamanho - 1) para se referir ao ultimo item.
+	Output: 4
+	
+	//Array de Strings
+	String[] stringArray = {"Franco", "Sofia"};
+	
+	Descrição do stringArray
+	{
+	String : é o tipo dos valores que serão armazenados;
+	[] : Declara que será um array;
+	"stringArray": Nome dado ao array;
+	{item1, item2, ...} = Elementos que serão adicionados, nota-se que deve ser do tipo do array;
+	}
+}	
+
+Loops:
+{
+	Os loops pode ser usados para interagir com cada item individualmente de um array.
+	//O while serve para fazer um loop entorno de uma condição booleana. O codigo dentro do While será repetido enquanto a condição estiver satisfeita.
+	int i = 0;
+	while(i<stringArray.lenght){
+
+		//O break serve para sair do loop atual. Neste caso, quando estivessemos na 3ª posição do array(item com index 2) o loop se quebraria.
+		if(i == 2) break;
+
+		System.out.println(stringArray[i]);
+		
+		i++;
+	}
+	
+		//O For serve para interagir com cada posição do array, tendo controle de qual posição se encontra em cada uma das interações.
+	for(int i=0; i<stringArray.lenght; i++){
+		//Verifica se a posição i do array é 2. Se for, quebra o loop.
+		if(i==2) break;
+		
+		System.out.println(stringArray[i]);
+	}
+	
+	//Uma alternativa para o For é o ForEach. Ele serve para percorrer um array por completo, criando um objeto novo para cada posição.
+	for(String name: stringArray){
+		//Verifica se a posição i do array é 2. Se for, quebra o loop.
+		if(stringArray.indexOf(name) == 2) break;
+		
+		System.out.println(name);
+	}
+}

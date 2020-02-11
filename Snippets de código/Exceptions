@@ -1,0 +1,74 @@
+Handling Exceptions: {
+	Exceptions(Exceções em portugues) são, no Java, algum problema não relacionado à sintaxe, mas sim a algo que está sendo processado.
+	Para exemplificar podemos utilizar uma porção de código:
+	
+	//Este código está escrito de maneira correta, mas dependendo do input deste método, podemos ter problemas
+	public double dividir(double a, double b){
+		return a/b;
+	}
+	
+	//Caso passarmos o 2º parametro como 0, teremos uma divisão impossivel. A exception lançada neste caso será o "ArithmeticException",
+	//O correto é lidar com o erro de maneira mais eficaz.
+	dividir(1,0);
+	
+	
+	Para lidar com Exceptions utilizamos o Try/Catch[finally].
+	Quando temos alguma porção de código suscetível ao erro, podemos tentar prevenir o programa de encontrar erros.
+	Exemplo:
+	double a = 1;
+	double b = 0;
+	try{
+		dividir(a,b);
+	}catch(ArithmeticException e){
+		System.out.println("Não é possivel realizar divisão por 0");
+	}
+	
+}
+RuntimeException: {
+	O funcionamento de um try/catch é com a procura de throws na porção do try. Quando um throw é lançado, o catch especifico "pega"(catch)
+	esse lançamento de erro, rodando a porção do código dentro das chavetas do catch.
+	
+	Ex.:
+	Person personA = null;
+	try{
+		System.out.println(personA.toString());
+	}catch(NullPointerException e){
+		System.out.println("Objeto utilizado está nulo. Objeto contruido sem informações.");
+	}
+	
+	RuntimeExceptions mais comuns são:
+	-NullPointerException
+	-ArrayIndexOutOfBoundsException
+	-ArithmeticException
+	-IllegalArgumentException
+	-NumberFormatException
+}
+Checked Exception: {
+	Outro tipo de exceptions são as exceptions checked. Estes são verificados em tempo de compilação.
+	Finally é a porção do código que roda após o try, independente do resultado.
+	Ex.:
+		File file = new File("test.txt");
+        FileInputStream fileInputStream = null;
+        try{
+            fileInputStream = new FileInputStream(file);
+            fileInputStream.read();
+        }catch (IOException e){         
+            System.out.println("Arquivo com nome especificado nao existente");
+        }finally{
+			fileInputStream.close();
+		}
+================================================================================================================
+		//Autoclosable try statement
+		File file = new File("test.txt");
+        try(FileInputStream fileInputStream = new FileInputStream(file)){
+            fileInputStream.read();
+        }catch (IOException e){         
+            System.out.println("Arquivo com nome especificado nao existente");
+        }
+		
+	As checked Exceptions mais comuns são:
+	-SQLException
+	-IOException
+	-ClassNotFoundException
+	-InvocationTargetException
+}
