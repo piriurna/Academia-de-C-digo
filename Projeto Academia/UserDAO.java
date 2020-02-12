@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import application.DBConnector;
 
 public class UserDAO {
+	private static User loggedInUser = null;
+	
 	private static DBConnector dbConnector = DBConnector.getConnector();
 	
 	public static ArrayList<User> getAllUsers() {
@@ -19,8 +21,7 @@ public class UserDAO {
 		try (Statement stat = conn.createStatement(); ResultSet rs = stat.executeQuery(sql)) {
 			while(rs.next()) {
 				String username = rs.getString(1);
-				String password = rs.getString(2);
-				users.add(new User(0, username, password, username, username));
+				users.add(new User(0, username, username, username, username));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -35,16 +36,25 @@ public class UserDAO {
 	}
 	
 	public static boolean login(String username, String password) {
-		boolean connected = false;
+		if(!alreadyRegistered(username)) return false;
+		if(!passwordIsCorrect(username, password)) return false;
+		
+		setLoggedInUser(getUser(username));		
+		return true;
+	}
+	
+	private static boolean passwordIsCorrect(String username, String password) {
+		boolean matches = false;
 		Connection conn = dbConnector.getConnection();
-		String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
+		String sql = "SELECT COUNT(id) FROM Users WHERE  username= ? AND password = ?";
 		ResultSet rs = null;
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setString(1, username);
 			stat.setString(2, password);
 			rs = stat.executeQuery();
-			if(rs.next())
-				connected = true;
+			if(rs.next()) {
+				matches = true;
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -55,7 +65,35 @@ public class UserDAO {
 				e.printStackTrace();
 			}
 		}
-		return connected;
+		return matches;
+	}
+
+	private static User getUser(String username) {
+		User user = null;
+		Connection conn = dbConnector.getConnection();
+		String sql = "SELECT id, name, email, cellphone  FROM Users WHERE  username= ?";
+		ResultSet rs = null;
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
+			stat.setString(1, username);
+			rs = stat.executeQuery();
+			if(rs.next()) {
+				int id = rs.getInt(1);
+//				String name = rs.getString(2);
+//				String email = rs.getString(3);
+//				String cellphone = rs.getString(4);
+				user = new User(id, null, username, null, null);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return user;
 	}
 	
 	public static boolean register(User user, String password) {
@@ -100,5 +138,13 @@ public class UserDAO {
 			}
 		}
 		return false;
+	}
+
+	public static User getLoggedInUser() {
+		return loggedInUser;
+	}
+
+	public static void setLoggedInUser(User loggedInUser) {
+		UserDAO.loggedInUser = loggedInUser;
 	}
 }
