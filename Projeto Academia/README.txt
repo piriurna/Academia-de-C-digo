@@ -1,6 +1,6 @@
 Formatação do Projeto:
 
-**Etapa 1**
+Etapa 1
 
 * Sistema autenticação
 * Lista de colaboradores
@@ -14,7 +14,7 @@ Formatação do Projeto:
 	* Nome, morada, telemóvel, foto, e-mail, nº do doc de informação, pode adicionar CV em pdf
 	* Pode alterar a foto
 
-*Etapa 2*
+Etapa 2
 
 Chat
 
@@ -31,6 +31,20 @@ caixa de introdução de texto, botão enviar
 Usando Web Services
 
 
-*Base de Dados*:
+Base de Dados:
 
+Colaboradores
+	* Nome
+	* Morada
+	* Número do Documento de Indentificação
+	* Idade 
+	* E-mail
+	* Telemóvel
+	* Foto
+	* CV
+
+
+Users
+	* Username
+	* Password
 
