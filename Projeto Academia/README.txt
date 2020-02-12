@@ -1,6 +1,6 @@
 Formatação do Projeto:
 
-*Etapa 1*
+**Etapa 1**
 
 * Sistema autenticação
 * Lista de colaboradores
