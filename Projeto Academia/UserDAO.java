@@ -37,18 +37,20 @@ public class UserDAO {
 	public static boolean login(String username, String password) {
 		boolean connected = false;
 		Connection conn = dbConnector.getConnection();
-		String sql = "";
-		try (PreparedStatement stat = conn.prepareStatement(sql); ResultSet rs = stat.executeQuery()) {
+		String sql = "SELECT * FROM Users WHERE username = ? AND password = ?";
+		ResultSet rs = null;
+		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setString(1, username);
 			stat.setString(2, password);
+			rs = stat.executeQuery();
 			if(rs.next())
 				connected = true;
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {
 				conn.close();
+				rs.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -80,7 +82,7 @@ public class UserDAO {
 	
 	private static boolean alreadyRegistered(String username) {
 		Connection conn = dbConnector.getConnection();
-		String sql = "SELECT * FROM Users WHERE  = ?";
+		String sql = "SELECT * FROM Users WHERE  username= ?";
 		ResultSet rs = null;
 		try (PreparedStatement stat = conn.prepareStatement(sql)) {
 			stat.setString(1, username);
