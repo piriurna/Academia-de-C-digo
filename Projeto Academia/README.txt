@@ -33,7 +33,7 @@ Usando Web Services
 
 Base de Dados:
 
-Colaboradores
+Colaborador
 	* id -> PK   INT
 	* Nome       VARCHAR2 (250)
 	* Morada     VARCHAR2 (100)
