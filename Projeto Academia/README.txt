@@ -34,24 +34,25 @@ Usando Web Services
 Base de Dados:
 
 Colaboradores
-	* Nome -> PK
-	* Morada
-	* Número do Documento de Indentificação
-	* Idade 
-	* E-mail
-	* Telemóvel
-	* Foto
-	* CV
+	* id -> PK   INT
+	* Nome       VARCHAR2 (250)
+	* Morada     VARCHAR2 (100)
+	* Número do Documento de Indentificação VARCHAR2 (50)
+	* Idade      VARCHAR2 (3)
+	* E-mail     VARCHAR2 (256)
+	* Telemóvel  VARCHAR2 (20)
+	* Foto       BLOB
+	* CV         BLOB
 
 
 Users
-	* Id -> PK
-	* Username
-	* Password
+	* Id -> PK   INT 
+	* Username   VARCHAR2 (20)
+	* Password   VARCHAR2 (200)
 	
 Sessions
-	* Id -> PK
-	* Id_User
-	* S_Start
-	* S_Last
+	* Id -> PK  INT
+	* Id_User   VARCHAR2 (20)
+	* S_Start   TIMESTAMP
+	* S_Last    TIMESTAMP
 
