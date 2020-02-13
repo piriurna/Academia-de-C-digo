@@ -35,12 +35,12 @@ Base de Dados:
 
 Colaborador
 	* id -> PK   INT (not null)
-	* Nome       VARCHAR2 (250) (not null)
-	* Morada     VARCHAR2 (100)
-	* Número do Documento de Indentificação (NUM_DOC_IDENT) VARCHAR2 (50)
+	* nome       VARCHAR2 (250) (not null)
+	* morada     VARCHAR2 (100)
+	* NUM_DOC_IDENT VARCHAR2 (50)
 	* Idade      VARCHAR2 (3)
-	* E-mail (EMAIL)     VARCHAR2 (256)
-	* Telemóvel  VARCHAR2 (20)
+	* Email     VARCHAR2 (256)
+	* Telemovel  VARCHAR2 (20)
 	* Foto       BLOB
 	* CV         BLOB
 
