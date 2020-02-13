@@ -11,7 +11,7 @@ Etapa 1
 
 	Informação do Colaborador:
 	
-	* Nome, morada, telemóvel, foto, e-mail, nº do doc de informação, pode adicionar CV em pdf
+	* Nome, morada, telemóvel, idade, foto, e-mail, nº do doc de informação, pode adicionar CV em pdf
 	* Pode alterar a foto
 
 Etapa 2
@@ -34,7 +34,7 @@ Usando Web Services
 Base de Dados:
 
 Colaboradores
-	* Nome
+	* Nome -> PK
 	* Morada
 	* Número do Documento de Indentificação
 	* Idade 
@@ -45,6 +45,13 @@ Colaboradores
 
 
 Users
+	* Id -> PK
 	* Username
 	* Password
+	
+Sessions
+	* Id -> PK
+	* Id_User
+	* S_Start
+	* S_Last
 
