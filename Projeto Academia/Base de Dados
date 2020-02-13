@@ -1,0 +1,46 @@
+Base de Dados:
+
+CREATE TABLE Colaboradores (
+    ColaboradorID INT PRIMARY KEY,
+    NOME VARCHAR2(250) NOT NULL,
+    NumCartaoCidadao VARCHAR2(12) NOT NULL,
+    Morada VARCHAR2(400) NULL,
+    Telemovel VARCHAR2(12) NULL,
+    Email VARCHAR2(256) NULL,
+    DataNascimento DATE NULL,
+    Foto BLOB NULL,
+    CV BLOB NULL
+);
+
+
+Users
+	* Id -> PK   INT (not null)
+	* Username   VARCHAR2 (20) (not null)
+	* Password   VARCHAR2 (200) (not null)
+	
+Sessions
+	* Id -> PK  INT (not null)
+	* Id_User   VARCHAR2 (20) (not null)
+	* S_Start   TIMESTAMP
+	* S_Last    TIMESTAMP
+
+
+Procedure Login:
+
+CREATE OR REPLACE PROCEDURE LOGIN
+(
+  vUSERNAME IN VARCHAR2
+, vPASSWORD IN VARCHAR2
+, vSESSION_ID OUT VARCHAR2
+) AS
+    USER_ID INT;
+BEGIN
+    SELECT Users.ID INTO USER_ID FROM Users WHERE username = vUSERNAME AND password = vPASSWORD;
+    IF USER_ID IS NOT NULL THEN
+        vSESSION_ID := DBMS_RANDOM.STRING('A', 10);
+        INSERT INTO Sessions(id, id_user, S_Start, S_Last) VALUES (vSESSION_ID, USER_ID, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+    ELSE
+        vSESSION_ID := 0;
+    END IF;
+   
+END LOGIN;
