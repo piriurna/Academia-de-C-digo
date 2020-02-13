@@ -34,8 +34,8 @@ Usando Web Services
 Base de Dados:
 
 Colaborador
-	* id -> PK   INT
-	* Nome       VARCHAR2 (250)
+	* id -> PK   INT (not null)
+	* Nome       VARCHAR2 (250) (not null)
 	* Morada     VARCHAR2 (100)
 	* Número do Documento de Indentificação (NUM_DOC_IDENT) VARCHAR2 (50)
 	* Idade      VARCHAR2 (3)
@@ -46,13 +46,13 @@ Colaborador
 
 
 Users
-	* Id -> PK   INT 
-	* Username   VARCHAR2 (20)
-	* Password   VARCHAR2 (200)
+	* Id -> PK   INT (not null)
+	* Username   VARCHAR2 (20) (not null)
+	* Password   VARCHAR2 (200) (not null)
 	
 Sessions
-	* Id -> PK  INT
-	* Id_User   VARCHAR2 (20)
+	* Id -> PK  INT (not null)
+	* Id_User   VARCHAR2 (20) (not null)
 	* S_Start   TIMESTAMP
 	* S_Last    TIMESTAMP
 
