@@ -1,19 +1,11 @@
-CREATE OR REPLACE PROCEDURE RemoverColaborador
+create or replace NONEDITIONABLE PROCEDURE RemoverColaborador
 (
-    vNumCartaoCidadao IN VARCHAR
+    vNumCartaoCidadao IN VARCHAR2
 )
 AS
-    vColaboradorID INT;
 BEGIN
-
     IF vNumCartaoCidadao IS NOT NULL THEN
-        SELECT ColaboradorID INTO vColaboradorID FROM Colaboradores
+        DELETE FROM Colaborador
         WHERE NumCartaoCidadao = vNumCartaoCidadao;
-        
-        IF vColaboradorID <> NULL THEN
-            DELETE FROM Colaboradores
-            WHERE Colaboradores.ColaboradorID = vColaboradorID;
-        
-        END IF;
     END IF;
 END;
