@@ -37,9 +37,9 @@ Colaboradores
 	* id -> PK   INT
 	* Nome       VARCHAR2 (250)
 	* Morada     VARCHAR2 (100)
-	* Número do Documento de Indentificação VARCHAR2 (50)
+	* Número do Documento de Indentificação (NUM_DOC_IDENT) VARCHAR2 (50)
 	* Idade      VARCHAR2 (3)
-	* E-mail     VARCHAR2 (256)
+	* E-mail (EMAIL)     VARCHAR2 (256)
 	* Telemóvel  VARCHAR2 (20)
 	* Foto       BLOB
 	* CV         BLOB
