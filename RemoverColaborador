@@ -1,0 +1,19 @@
+CREATE OR REPLACE PROCEDURE RemoverColaborador
+(
+    vNumCartaoCidadao IN VARCHAR
+)
+AS
+    vColaboradorID INT;
+BEGIN
+
+    IF vNumCartaoCidadao IS NOT NULL THEN
+        SELECT ColaboradorID INTO vColaboradorID FROM Colaboradores
+        WHERE NumCartaoCidadao = vNumCartaoCidadao;
+        
+        IF vColaboradorID <> NULL THEN
+            DELETE FROM Colaboradores
+            WHERE Colaboradores.ColaboradorID = vColaboradorID;
+        
+        END IF;
+    END IF;
+END;
