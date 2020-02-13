@@ -1,7 +1,6 @@
 CREATE OR REPLACE PROCEDURE UPDATE_COLABORADOR 
 (
-  vCOLABORADORID IN VARCHAR2 
-, vNOME IN VARCHAR2 
+  vNOME IN VARCHAR2 
 , vNUMCARTAOCIDADAO IN VARCHAR2 
 , vMORADA IN VARCHAR2 
 , vTELEMOVEL IN VARCHAR2 
@@ -12,11 +11,11 @@ CREATE OR REPLACE PROCEDURE UPDATE_COLABORADOR
 ) AS 
     vNum_Registros INT;
 BEGIN
-    SELECT COUNT(*) INTO vNum_Registros FROM Colaborador WHERE Colaborador.id = vColaboradorid;
+    SELECT COUNT(*) INTO vNum_Registros FROM Colaborador WHERE numcartaocidadao = vnumcartaocidadao;
 
   IF vNum_Registros < 1 THEN
     INSERT INTO Colaborador(id, nome, Numcartaocidadao, Morada, Telemovel, Email, Datanascimento, Foto, Cv) 
-    VALUES (vColaboradorid, vNome, vNumcartaocidadao, vMorada, vTelemovel, vEmail, vDatanascimento, vFoto, vCv);
+    VALUES (COLABORADOR_SEQUENCE.nextval, vNome, vNumcartaocidadao, vMorada, vTelemovel, vEmail, vDatanascimento, vFoto, vCv);
   ELSE
     UPDATE Colaborador
     SET Colaborador.nome = vNome,
