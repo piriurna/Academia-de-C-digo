@@ -10,7 +10,6 @@ CREATE OR REPLACE PROCEDURE ConsultarColaborador
     vCV OUT BLOB
 )
 AS
-    vColaboradorID INT;
 BEGIN
 
     IF vNumCartaoCidadao IS NOT NULL THEN
