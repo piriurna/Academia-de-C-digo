@@ -1,0 +1,32 @@
+BEGIN
+    insert_update_colaboradores('Miguel', '123456789', 'Rua sem fim', '934567823', 'mig@gmail.com', '15-FEB-05', null, null);
+END;
+
+BEGIN
+    update_colaborador('Henrique', '123456789', 'Rua com fim', '963457890', 'hen@gmail.com', '17-FEB-02', null, null);
+END;
+
+DECLARE
+ nome VARCHAR2(250);
+ numcartaocidadao VARCHAR2(12);
+ morada VARCHAR2(400);
+ telemovel VARCHAR2(12);
+ email VARCHAR2(256);
+ datanascimento DATE;
+ foto BLOB;
+ cv BLOB;
+ 
+BEGIN
+    numcartaocidadao:='123456987';
+    consult_colaborador(nome, numcartaocidadao, morada, telemovel, email, datanascimento, foto, cv);
+    
+    dbms_output.put_line(nome);
+    dbms_output.put_line(numcartaocidadao);
+    dbms_output.put_line(morada);
+    dbms_output.put_line(telemovel);
+    dbms_output.put_line(email);
+    --dbms_output.put_line(datanascimento);
+    --dbms_output.put_line(foto);
+    --dbms_output.put_line(cv);
+END;
+ 

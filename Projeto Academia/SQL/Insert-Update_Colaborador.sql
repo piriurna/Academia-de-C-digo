@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE UPDATE_COLABORADOR 
+create or replace NONEDITIONABLE PROCEDURE UPDATE_COLABORADOR 
 (
   vNOME IN VARCHAR2 
 , vNUMCARTAOCIDADAO IN VARCHAR2 
@@ -24,6 +24,7 @@ BEGIN
         colaborador.email = vEmail,
         colaborador.datanascimento = vDatanascimento,
         colaborador.foto = vFoto,
-        colaborador.cv = cv;
+        colaborador.cv = cv
+    WHERE colaborador.numcartaocidadao = vNUMCARTAOCIDADAO;
   END IF;
 END UPDATE_COLABORADOR;
