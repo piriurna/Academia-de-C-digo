@@ -1,0 +1,407 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  width: 100%;
+  background: red;
+  height: 100vh;
+  min-height: 400px;
+  display: block;
+  background: url(https://www.aithority.com/wp-content/uploads/2019/05/Altran-collaborates-with-Siemens-to-develop-Innovative-1.jpg); 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.feature .heading {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+.feature .heading h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0m;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.5);
+  box-shadow: 1px 1px 50px #ffffff;
+  color: #045BA6;
+}
+
+.site__top {
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.site__top .social {
+  display: none;
+}
+.site__top .logo {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+  padding-top: 15px;
+  color: #ffffff;
+}
+.site__top .logo h1 {
+  line-height: 0;
+}
+.site__top .logo h2 {
+  line-height: 5px;
+  font-family: Helvetica, arial;
+  font-weight: 100;
+}
+.site__top .menu {
+  display: inline-block;
+  vertical-align: top;
+  position: absolute;
+  right: 50px;
+  top: 25px;
+}
+.site__top .menu a {
+  vertical-align: top;
+  text-decoration: none;
+  line-height: 20px;
+  font-size: 16px;
+  color: #ffffff;
+}
+.site__top .menu a span {
+  display: none;
+}
+.site__top .menu a #nav-icon3 {
+  display: inline-block;
+}
+.site__open .logo {
+  color: #22103f;
+}
+.site__open .menu span {
+  color: #22103f;
+}
+.site__open .menu a {
+  color: #22103f;
+}
+
+.popup {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eff1fe;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.popup__middle {
+  margin-top: 100px;
+  height: 90%;
+  height: calc(100% - 225px);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+.popup__middle nav {
+  display: block;
+  margin-bottom: 90px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.popup__middle ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.popup__middle ul li {
+  padding: 6px 0;
+  margin: 0;
+}
+.popup__middle ul li a {
+  text-decoration: none;
+  color: #22103f;
+  font-size: 18px;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+}
+.popup__middle ul li a:hover {
+  border-bottom: 1px solid #22103f;
+}
+.popup .shadow {
+  box-shadow: inset 0 -10vh 6vh #eff1fe;
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  height: 100px;
+  background: transparent;
+  z-index: 2;
+}
+.popup__bottom {
+  z-index: 3;
+  background: #eff1fe;
+  border-top: 1px solid #cdd3fd;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 125px;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  padding: 20px 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.popup__bottom .details p {
+  margin: 0;
+  margin-top: 5px;
+  line-height: 18px;
+  font-size: 14px;
+}
+.popup__bottom .details a {
+  display: block;
+  text-decoration: none;
+  line-height: 18px;
+  font-size: 14px;
+  color: #22103f;
+}
+.popup__bottom .book-now p {
+  margin: 0;
+  margin-top: 5px;
+}
+.popup__bottom .book-now a {
+  text-decoration: none;
+  line-height: 18px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #22103f;
+}
+
+@media screen and (min-width: 900px) {
+  .site__top .social {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: 20px;
+    left: 50px;
+  }
+  .site__top .social__icon--fb {
+    background: #f6f7ff;
+    background-image: url(http://image005.flaticon.com/1/svg/59/59439.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .site__top .social__icon--tw {
+    background: #f6f7ff;
+    background-image: url(http://image005.flaticon.com/9/svg/8/8800.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .site__top .social__icon--in {
+    background: #f6f7ff;
+    background-image: url(http://image005.flaticon.com/1/svg/48/48898.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .site__top .social__icon--yt {
+    background: #f6f7ff;
+    background-image: url(https://image.flaticon.com/icons/png/512/2190/2190407.png);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .site__top .social__icon--lk {
+    background: #f6f7ff;
+    background-image: url(https://image.flaticon.com/icons/svg/80/80963.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .site__top .social__icon--lo {
+    background: #f6f7ff;
+    background-image: url(https://image.flaticon.com/icons/svg/1/1228.svg);
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-right: 5em;
+  }
+  .site__top .social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .site__top .social ul li {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+  }
+  .site__top .social ul li a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cdd3fd;
+    color: #22103f;
+    border-radius: 100%;
+    text-indent: -999px;
+    display: block;
+  }
+  .site__top .social ul li a:hover {
+    background-color: #ffffff;
+  }
+  .site__top .logo {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+    padding-top: 15px;
+  }
+  .site__top .logo h1 {
+    line-height: 0;
+  }
+  .site__top .logo h2 {
+    line-height: 5px;
+    font-family: Helvetica, arial;
+    font-weight: 100;
+  }
+  .site__top .menu {
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    right: 50px;
+    top: 25px;
+  }
+  .site__top .menu a {
+    vertical-align: top;
+    text-decoration: none;
+    line-height: 20px;
+    font-size: 16px;
+  }
+  .site__top .menu a span {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .site__top .menu a #nav-icon3 {
+    display: inline-block;
+  }
+
+  .popup__middle ul li {
+    padding: 10px 0;
+  }
+  .popup__middle ul li a {
+    font-size: 26px;
+  }
+  .popup__bottom {
+    padding: 25px 0;
+  }
+  .popup__bottom .details p {
+    margin: 0;
+    margin-top: 5px;
+    line-height: 20px;
+    font-size: 16px;
+  }
+  .popup__bottom .details a {
+    line-height: 20px;
+    font-size: 16px;
+  }
+  .popup__bottom .book-now {
+    position: absolute;
+    right: 50px;
+    top: 40px;
+  }
+  .popup__bottom .book-now a {
+    line-height: 20px;
+    font-size: 16px;
+  }
+}
+.site__open #nav-icon3 span {
+  background: #22103f;
+}
+
+#nav-icon3 {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon3 span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 4px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+/* Icon 3 */
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2), #nav-icon3 span:nth-child(3) {
+  top: 10px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 20px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 10px;
+  width: 0%;
+  left: 50%;
+}
